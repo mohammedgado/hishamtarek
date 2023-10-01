@@ -75,7 +75,8 @@ class UserController {
     final finalUri = Uri.parse( "${Constants
         .baseURL}/select/LessonsGet?lessonId=0&materialId=1&userId=$UserId");
     final response = await http.get(finalUri);
-    //print(response.statusCode);
+    print( "${Constants
+        .baseURL}/select/LessonsGet?lessonId=0&materialId=1&userId=$UserId");
     //print(response.body);
 
     if (response.statusCode == 200) {

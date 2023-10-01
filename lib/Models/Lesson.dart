@@ -11,7 +11,7 @@ class Lesson {
   late int Id;
   late int StudentsNo;
   late String Name ;
-  late String Description ;
+  String? Description ;
   late String Date ;
   late int price;
   late int MaterialId;

@@ -203,7 +203,9 @@ class CoursesViewState extends State<CoursesView> {
                                                                 padding: const EdgeInsets.all(10),
                                                                 child:  Text(
                                                                   _userModel![index]
-                                                                      .Description,
+                                                                      .Description==null?'':
+                                                                  _userModel![index]
+                                                                      .Description!,
                                                                   style: TextStyle(
                                                                       color: Colors.black),
                                                                   textAlign:
