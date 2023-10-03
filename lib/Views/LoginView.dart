@@ -90,19 +90,20 @@ deviceImei=UserData.deviceIMEI;
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Spacer(flex: 1),
-                Image.asset('images/applogo.jpg',width: context.screenWidth*.25,height: context.screenWidth*.25 ,),
+                Image.asset('images/applogo.jpg',width: 128,height: 128 ,),
                 Spacer(flex: 2),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.all(11.0),
-                    child: AuthTextField(
-                        labelText: "رقم التليفون",
-                        obscureText: false,
-                        onChanged: (text) {
-                          email = text;
-                        }),
+                      child: AuthTextField(
+                          labelText: "رقم التليفون",
+                          obscureText: false,
+                          onChanged: (text) {
+                            email = text;
+                          }),
+
                   ),
-                  flex: 2,
+                  flex: 3,
                 ),
                 Expanded(
                     child: Padding(
@@ -115,7 +116,7 @@ deviceImei=UserData.deviceIMEI;
                         },
                       ),
                     ),
-                    flex: 2),
+                    flex: 3),
                 Spacer(),
                 Expanded(
                   child: SizedBox(
@@ -140,7 +141,7 @@ deviceImei=UserData.deviceIMEI;
                           onPressed: () => loginValidation(_loginBtnController),
                         ),
                       )),
-                  flex: 2,
+                  flex: 3,
                 ),
                 Expanded(
                   child: Row(
