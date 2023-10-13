@@ -46,7 +46,7 @@ class CoursesViewState extends State<CoursesView> {
   }
 
   _launchWhatsapp()  {
-    context.showAlertThenWhatsApp(title: 'تنبيه',message: 'سيتم توجيهك للواتساب لشراء المحتوى');
+    context.showAlertThenWhatsApp(title: 'تنبيه',message: 'سيتم توجيهك للواتساب للانضمام المحتوى');
 
   }
   openWhatsApp(var context) async {
@@ -221,7 +221,7 @@ class CoursesViewState extends State<CoursesView> {
                                                               width: context.screenWidth*.3,
                                                               child: TextButton(
                                                                   child: Text(
-                                                                     _userModel![index].IsBought ?"تم الشراء":"شراء",
+                                                                     _userModel![index].IsBought ?"تم الانضمام":"الانضمام",
                                                                       style: TextStyle(fontSize: 12)
                                                                   ),
                                                                   style: ButtonStyle(

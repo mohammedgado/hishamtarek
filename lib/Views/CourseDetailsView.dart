@@ -185,7 +185,7 @@ class CourseDetailsViewState extends State<CourseDetailsView> {
                                                 }
                                               }
                                               else{
-                                                context.showAlertThenWhatsApp(title: 'تنبيه',message: 'سيتم توجيهك للواتساب لشراء المحتوى')
+                                                context.showAlertThenWhatsApp(title: 'تنبيه',message: 'سيتم توجيهك للواتساب للانضمام')
                                               }
 
 
