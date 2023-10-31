@@ -185,9 +185,9 @@ class CoursesViewState extends State<CoursesView> {
                                                               child: Padding(
                                                                 padding: const EdgeInsets.all(10),
                                                                 child: Text(
-                                                                  "عدد المشتركين : "+
+                                                                 /* "عدد المشتركين : "+
                                                                       _userModel![index]
-                                                                          .StudentsNo.toString(),
+                                                                          .StudentsNo.toString()*/"",
                                                                   style: TextStyle(
                                                                       color: Colors.deepOrange),
                                                                   textAlign:
