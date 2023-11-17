@@ -141,9 +141,10 @@ class CourseDetailsViewState extends State<CourseDetailsView> {
                                           padding: const EdgeInsets.all(10),
                                           child: Text(
 
-                                            _userModel![index]
+                                          /*  _userModel![index]
                                                 .ContentPrice
-                                                ==0 ? "محتوى مجاني" : ""
+                                                ==0 ? "محتوى مجاني" : ""*/
+                                            ""
                                             ,
                                             style: TextStyle(
                                                 color: Colors.deepOrange),

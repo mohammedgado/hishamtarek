@@ -168,9 +168,10 @@ class CoursesViewState extends State<CoursesView> {
                                                                 padding: const EdgeInsets.all(10),
                                                                 child: Text(
 
-                                                                      _userModel![index]
+                                                                 /*     _userModel![index]
                                                                           .price
-                                                                          .toString() +"جنيه"
+                                                                          .toString() +"جنيه"*/
+                                                                  ""
                                                                      ,
                                                                   style: TextStyle(
                                                                       color: Colors.deepOrange),
