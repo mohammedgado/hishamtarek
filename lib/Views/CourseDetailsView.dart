@@ -64,7 +64,7 @@ class CourseDetailsViewState extends State<CourseDetailsView> {
           icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Hisham Tarek',style: TextStyle(color: appDesign.colorAccent)),
+        title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
       ),
       body:
       ListView.builder(

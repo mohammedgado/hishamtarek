@@ -83,7 +83,7 @@ class _SignUp extends State<SignUpView> {
         //print(selectedTownObj!.toJson());
         controller
             .SignUp(
-            new User(Id: 0, Username: email, Password: password, Name: email, Phone1: number))
+            new User(Id: 0, Username: email, Password: password, Name: email, Phone1: number,IMEIDesktopOnline: null,IMEI: null))
             .then((user) {
           if (user != null) {
             btnController.success();
@@ -122,7 +122,7 @@ class _SignUp extends State<SignUpView> {
           icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Hisham Tarek',style: TextStyle(color: appDesign.colorAccent)),
+        title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
       ),
       backgroundColor: appDesign.backGround,
       body: SingleChildScrollView(

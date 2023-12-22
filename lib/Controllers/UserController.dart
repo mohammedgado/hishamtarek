@@ -73,10 +73,10 @@ class UserController {
   Future<List<Lesson>> GetCourses(String UserId) async {
 
     final finalUri = Uri.parse( "${Constants
-        .baseURL}/select/LessonsGet?lessonId=0&materialId=1&userId=$UserId");
+        .baseURL}/select/LessonsGet2?lessonId=0&materialId=1&userId=$UserId");
     final response = await http.get(finalUri);
     print( "${Constants
-        .baseURL}/select/LessonsGet?lessonId=0&materialId=1&userId=$UserId");
+        .baseURL}/select/LessonsGet2?lessonId=0&materialId=1&userId=$UserId");
     //print(response.body);
 
     if (response.statusCode == 200) {
@@ -96,7 +96,7 @@ class UserController {
   Future<List<Lesson>> GetCourseDetails(String lessonId,String UserId) async {
 
     final finalUri = Uri.parse( "${Constants
-        .baseURL}/select/LessonsGet?lessonId=${lessonId}&materialId=1&userId=$UserId");
+        .baseURL}/select/LessonsGet2?lessonId=${lessonId}&materialId=1&userId=$UserId");
     final response = await http.get(finalUri);
     //print(response.statusCode);
     //print(response.body);

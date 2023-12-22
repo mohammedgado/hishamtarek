@@ -5,6 +5,7 @@
 import 'dart:io';
 
 import 'package:device_imei/device_imei.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,7 +39,16 @@ class _LoginState extends State<LoginView> {
   @override
  initState()  {
     super.initState();
-deviceImei=UserData.deviceIMEI;
+    getIMEI();
+    //
+  }
+
+
+  getIMEI() async {
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    WindowsDeviceInfo info = await deviceInfo.windowsInfo;
+    UserData.deviceIMEI=info.deviceId;
+
   }
 
 
@@ -53,14 +63,21 @@ deviceImei=UserData.deviceIMEI;
     } else {
       controller.Login(email, pass,deviceImei).then((value) async {
         if (value != null) {
-          print("User IS ${value} *************************");
-          SharedPreferences prefs = await SharedPreferences.getInstance();
-          prefs.setInt("UserID", value.Id);
-          prefs.setString("UserName", value.Username);
-          UserData.userId=value.Id;
-          UserData.userName=value.Username;
-          context.navigateTo(CoursesView());
-
+          if(value.IMEI==UserData.deviceIMEI){
+            print("User IS ${value} *************************");
+            SharedPreferences prefs = await SharedPreferences.getInstance();
+            prefs.setInt("UserID", value.Id);
+            prefs.setString("UserName", value.Username);
+            UserData.userId=value.Id;
+            UserData.userName=value.Username;
+            context.navigateTo(CoursesView());
+          }
+          else {
+            context.showAlert(
+                title: "تنبيه",
+                message: "هذا جهاز مختلف عن المسجل للحساب");
+            btnController.reset();
+          }
 
         } else {
           context.showAlert(
@@ -73,6 +90,7 @@ deviceImei=UserData.deviceIMEI;
 
     // Send the email and password to your backend for authentication
   }
+
 
 
   @override

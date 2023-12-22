@@ -53,7 +53,7 @@ class SettingsViewState extends State<SettingsView> {
           icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: const Text('Hisham Tarek',style: TextStyle(color: appDesign.colorAccent)),
+        title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
       ),
       backgroundColor: appDesign.backGround,
       body: SingleChildScrollView(
@@ -90,6 +90,26 @@ class SettingsViewState extends State<SettingsView> {
                   )
                   ,
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(10,70,10,10),
+                  child: Container(
+                    width: context.screenWidth,
+                    child: ElevatedButton(
+                      style: raisedButtonStyle,
+                      onPressed: () async {
+                        SharedPreferences prefs = await SharedPreferences.getInstance();
+                        prefs.setInt("UserID", 0);
+                        prefs.setString("UserName", "");
+                        UserData.userName="";
+                        UserData.userId=0;
+                        Restart.restartApp();
+
+                      },
+                      child: Text('حذف الحساب',style: TextStyle(fontSize: 25,color: appDesign.colorAccent)),
+                    ),
+                  )
+                  ,
+                )
 
 
 

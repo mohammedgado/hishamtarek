@@ -70,7 +70,7 @@ class CoursesViewState extends State<CoursesView> {
       appBar:AppBar(
         backgroundColor: appDesign.colorPrimaryDark,
         automaticallyImplyLeading: false,
-        title: const Text('Hisham Tarek',style: TextStyle(color: appDesign.colorAccent)),
+        title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
       ),
       floatingActionButton: FloatingActionButton(
         child: FaIcon(FontAwesomeIcons.whatsapp,color: appDesign.colorAccent),

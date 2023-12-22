@@ -4,13 +4,17 @@ class User {
   late String Password;
   late String Name;
   late String Phone1;
+  String? IMEI ;
+  String? IMEIDesktopOnline ;
 
   User({
     required this.Id,
     required this.Username,
     required this.Password,
     required this.Name,
-    required this.Phone1
+    required this.Phone1,
+    required this.IMEI,
+    required this.IMEIDesktopOnline
 
   });
 
@@ -22,6 +26,9 @@ class User {
       Password: json['Password'],
       Name: json['Name'],
       Phone1: json['Phone1'],
+      IMEI: json['IMEI'],
+      IMEIDesktopOnline: json['IMEIDesktopOnline'],
+
     );
   }
 
@@ -42,6 +49,7 @@ class User {
     'Balance': 0,
     'Status': 0,
     'ExpireDate': "2040-01-01",
+    'IMEI': IMEI,
 
 
   };
