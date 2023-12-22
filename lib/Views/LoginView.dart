@@ -45,9 +45,9 @@ class _LoginState extends State<LoginView> {
 
 
   getIMEI() async {
-    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-    WindowsDeviceInfo info = await deviceInfo.windowsInfo;
-    UserData.deviceIMEI=info.deviceId;
+   // DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+   // IosDeviceInfo info = await deviceInfo.iosInfo;
+    UserData.deviceIMEI="";
 
   }
 
@@ -63,7 +63,7 @@ class _LoginState extends State<LoginView> {
     } else {
       controller.Login(email, pass,deviceImei).then((value) async {
         if (value != null) {
-          if(value.IMEI==UserData.deviceIMEI){
+        //  if(value.IMEI==UserData.deviceIMEI){
             print("User IS ${value} *************************");
             SharedPreferences prefs = await SharedPreferences.getInstance();
             prefs.setInt("UserID", value.Id);
@@ -71,13 +71,13 @@ class _LoginState extends State<LoginView> {
             UserData.userId=value.Id;
             UserData.userName=value.Username;
             context.navigateTo(CoursesView());
-          }
+       /*   }
           else {
             context.showAlert(
                 title: "تنبيه",
                 message: "هذا جهاز مختلف عن المسجل للحساب");
             btnController.reset();
-          }
+          }*/
 
         } else {
           context.showAlert(
