@@ -12,6 +12,8 @@ class Lesson {
   late int StudentsNo;
   late String Name ;
   String? Description ;
+  String? TrainerName ;
+
   late String Date ;
   late int price;
   late int MaterialId;
@@ -27,6 +29,7 @@ class Lesson {
     required this.MaterialId,
     required this.IsBought,
     required this.LessonApiDto,
+    this.TrainerName,
 
   });
 
@@ -41,6 +44,7 @@ class Lesson {
       price: json['price'],
       MaterialId: json['MaterialId'],
       IsBought: json['IsBought'],
+      TrainerName: json['TrainerName'],
       LessonApiDto: List<Apidto>.from(json["LessonApiDto"].map((x) => Apidto.fromJson(x))),
 
     );
@@ -55,6 +59,7 @@ class Lesson {
     'price': price,
     'MaterialId': MaterialId,
     'IsBought': IsBought,
+    'TrainerName': TrainerName,
 
 
   };

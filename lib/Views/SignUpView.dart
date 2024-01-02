@@ -62,21 +62,17 @@ class _SignUp extends State<SignUpView> {
           title:"تنبيه",
           message:"من فضلك ادخل جميع الحقول المطلوبة");
     } else if (name != null  && password != null) {
-      if (password.length < 8) {
-        //todo app strength bar
-        context.showAlert(
-            title: "تنبيه",
-            message: "ادخل كلمة مرور لا تقل عن 8 حروف");
-        btnController.reset();
-      } else if (!number.toString().isValidNumber()) {
+       if (!number.toString().isValidNumber()) {
         context.showAlert(
             title: "تنبيه",
             message:"ادخل رقم هاتف صحيح");
         btnController.reset();
       }
+       if(email.length>0){
       if (
-      password.length >= 8 &&
+
           number.toString().isValidNumber()) {
+
         print("now we can add to data base");
 
         // print("Selected town befor go");
@@ -101,7 +97,13 @@ class _SignUp extends State<SignUpView> {
         });
       } else {
         print("Enter Else ");
-      }
+      }}
+       else{
+         context.showAlert(
+             title: "تنبيه",
+             message: "برجاء ادخال البريد الالكتروني");
+         btnController.reset();
+       }
     }
 
     // Send the email and password to your backend for authentication

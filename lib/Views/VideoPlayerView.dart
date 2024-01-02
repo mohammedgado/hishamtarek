@@ -67,12 +67,19 @@ class VideoPlayerViewState extends State<VideoPlayerView> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-
+        appBar:AppBar(
+          backgroundColor: appDesign.colorPrimaryDark,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+          title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
+        ),
         backgroundColor: appDesign.backGround,
         body: Container(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.all(1),
+              padding: EdgeInsets.all(20),
               child: YoutubePlayer(
                 controller: _controller,
                 liveUIColor: Colors.amber,
