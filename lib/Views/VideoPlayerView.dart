@@ -60,38 +60,55 @@ class VideoPlayerViewState extends State<VideoPlayerView> {
       height = window.physicalSize.height;
     });
   }
+  finishScreen(){
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+    Navigator.of(context).pop();
+  }
 
-
+  finishScreenFromBackGesture(){
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
 
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-        appBar:AppBar(
-          backgroundColor: appDesign.colorPrimaryDark,
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
-            onPressed: () => Navigator.of(context).pop(),
+    return WillPopScope(
+      onWillPop:() => finishScreenFromBackGesture(),
+      child: Scaffold(
+          extendBodyBehindAppBar: true,
+          appBar:AppBar(
+            backgroundColor: Color(0x44000000),
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back, color: appDesign.colorAccent),
+              onPressed: () =>finishScreen()
+
+            ),
+            title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
           ),
-          title: const Text('Hesham Tarek',style: TextStyle(color: appDesign.colorAccent)),
-        ),
-        backgroundColor: appDesign.backGround,
-        body: Container(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(20),
-              child: YoutubePlayer(
-                controller: _controller,
-                liveUIColor: Colors.amber,
-                onReady: () {
-                  _isPlayerReady = true;
-                },
+          backgroundColor: appDesign.backGround,
+          body: Container(
+            child: Center(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 20,horizontal: 0),
+                child: YoutubePlayer(
+                  controller: _controller,
+                  liveUIColor: Colors.amber,
+                  onReady: () {
+                    _isPlayerReady = true;
+                  },
 
 
+                ),
               ),
             ),
-          ),
-        )
+          )
+      ),
     );
   }
 }

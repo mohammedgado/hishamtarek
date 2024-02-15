@@ -4,6 +4,7 @@ class User {
   late String Password;
   late String Name;
   late String Phone1;
+  late String SchoolName;
   String? IMEI ;
   String? IMEIDesktopOnline ;
 
@@ -14,7 +15,8 @@ class User {
     required this.Name,
     required this.Phone1,
     required this.IMEI,
-    required this.IMEIDesktopOnline
+    required this.IMEIDesktopOnline,
+    required this.SchoolName
 
   });
 
@@ -26,6 +28,7 @@ class User {
       Password: json['Password'],
       Name: json['Name'],
       Phone1: json['Phone1'],
+      SchoolName: json['SchoolName'],
       IMEI: json['IMEI'],
       IMEIDesktopOnline: json['IMEIDesktopOnline'],
 
@@ -34,7 +37,7 @@ class User {
 
   Map<String, dynamic> toJson() => {
     'Id': Id,
-    'Username': Username,
+    'Username': Name,
     'Password': Password,
     'Name': Name,
     'Phone1': Phone1,
@@ -43,7 +46,7 @@ class User {
     'Country': "",
     'Government': 0,
     'Address': "",
-    'SchoolName': "",
+    'SchoolName': SchoolName,
     'UserType': 0,
     'NationalId': "",
     'Balance': 0,

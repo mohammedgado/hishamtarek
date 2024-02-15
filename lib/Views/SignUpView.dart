@@ -79,7 +79,7 @@ class _SignUp extends State<SignUpView> {
         //print(selectedTownObj!.toJson());
         controller
             .SignUp(
-            new User(Id: 0, Username: email, Password: password, Name: email, Phone1: number,IMEIDesktopOnline: null,IMEI: null))
+            new User(Id: 0, Username: name, Password: password, Name:name,Phone1: number,SchoolName:email,IMEIDesktopOnline: null,IMEI: null))
             .then((user) {
           if (user != null) {
             btnController.success();
