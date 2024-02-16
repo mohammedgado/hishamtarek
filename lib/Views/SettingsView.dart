@@ -36,8 +36,6 @@ class SettingsViewState extends State<SettingsView> {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-      onPrimary: Colors.black87,
-      primary: Colors.grey[300],
       minimumSize: Size(88, 50),
       backgroundColor: appDesign.colorPrimaryDark,
       padding: EdgeInsets.symmetric(horizontal: 16),
