@@ -82,7 +82,13 @@ class SettingsViewState extends State<SettingsView> {
                         prefs.setString("UserName", "");
                         UserData.userName="";
                         UserData.userId=0;
-                        Restart.restartApp();
+                        Navigator.pushAndRemoveUntil<dynamic>(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => LoginView(),
+                          ),
+                              (route) => false,//if you want to disable back feature set to false
+                        );
 
                       },
                       child: Text('تسجيل خروج',style: TextStyle(fontSize: 25,color: appDesign.colorAccent)),
@@ -102,7 +108,14 @@ class SettingsViewState extends State<SettingsView> {
                         prefs.setString("UserName", "");
                         UserData.userName="";
                         UserData.userId=0;
-                        Restart.restartApp();
+                        Navigator.pushAndRemoveUntil<dynamic>(
+                          context,
+                          MaterialPageRoute<dynamic>(
+                            builder: (BuildContext context) => LoginView(),
+                          ),
+                              (route) => false,//if you want to disable back feature set to false
+                        );
+
 
                       },
                       child: Text('حذف الحساب',style: TextStyle(fontSize: 25,color: appDesign.colorAccent)),
