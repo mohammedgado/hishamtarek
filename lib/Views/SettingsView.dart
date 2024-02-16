@@ -6,7 +6,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hishamtarek/Extensions.dart';
 import 'package:hishamtarek/Models/User.dart';
-import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../Models/Constants.dart';
 import '../Controllers/UserController.dart';

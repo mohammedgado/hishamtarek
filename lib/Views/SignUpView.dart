@@ -6,9 +6,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hishamtarek/Extensions.dart';
 import 'package:hishamtarek/Models/User.dart';
-import 'package:rounded_loading_button/rounded_loading_button.dart';
 import '../Models/Constants.dart';
 import '../Controllers/UserController.dart';
+import '../rounded_loading_button.dart';
 import 'LoginView.dart';
 import 'Shared/authTextField.dart';
 

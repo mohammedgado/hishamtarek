@@ -11,11 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hishamtarek/Extensions.dart';
 import 'package:hishamtarek/Views/CoursesView.dart';
-import 'package:rounded_loading_button/rounded_loading_button.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../Controllers/UserController.dart';
 import '../Models/Constants.dart';
+import '../rounded_loading_button.dart';
 import 'Shared/authTextField.dart';
 import 'SignUpView.dart';
 class LoginView extends StatefulWidget {
