@@ -24,6 +24,7 @@ class SettingsView extends StatefulWidget {
 
 class SettingsViewState extends State<SettingsView> {
 
+  final controller = UserController();
 
 
 
@@ -101,17 +102,21 @@ class SettingsViewState extends State<SettingsView> {
                       style: raisedButtonStyle,
                       onPressed: () async {
                         SharedPreferences prefs = await SharedPreferences.getInstance();
-                        prefs.setInt("UserID", 0);
-                        prefs.setString("UserName", "");
-                        UserData.userName="";
-                        UserData.userId=0;
-                        Navigator.pushAndRemoveUntil<dynamic>(
-                          context,
-                          MaterialPageRoute<dynamic>(
-                            builder: (BuildContext context) => LoginView(),
-                          ),
-                              (route) => false,//if you want to disable back feature set to false
-                        );
+                        controller.DeleteUser(prefs.getInt("UserID")!).then((value) async {
+                          prefs.setInt("UserID", 0);
+                          prefs.setString("UserName", "");
+                          UserData.userName="";
+                          UserData.userId=0;
+                          Navigator.pushAndRemoveUntil<dynamic>(
+                            context,
+                            MaterialPageRoute<dynamic>(
+                              builder: (BuildContext context) => LoginView(),
+                            ),
+                                (route) => false,//if you want to disable back feature set to false
+                          );
+                        });
+
+
 
 
                       },

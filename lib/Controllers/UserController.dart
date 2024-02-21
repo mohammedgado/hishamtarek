@@ -140,4 +140,25 @@ class UserController {
     return user;
   }
 
+  Future<bool> DeleteUser(int userId) async {
+
+    final finalUri = Uri.parse( "${Constants
+        .baseURL}/create/UserDelete?userId=${userId}");
+
+    final response = await http.post(finalUri);
+    //print(response.statusCode);
+    print(response.body);
+
+    if (response.statusCode == 200) {
+      //print("Succ Categories network Manager");
+      // print(response.body);
+      return true;
+    } else {
+      print("ERROR in  CATEGORIES CALL");
+      print(response.statusCode);
+      return false;
+    }
+
+  }
+
 }
